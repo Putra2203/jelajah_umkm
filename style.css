@@ -65,9 +65,9 @@ header {
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  min-height: calc(100vh - 81px);
+  height: 100vh;
   padding: 40px;
-  background-image: url("Gemini_Generated_Image_14tkss14tkss14tk.png");
+  background-image: url("background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
