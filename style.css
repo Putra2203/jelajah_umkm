@@ -1,0 +1,456 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  position: relative;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #00a716;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
+  color: #bc6f04;
+  font-weight: normal;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background-color: #bc6f04;
+  color: white;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  min-height: calc(100vh - 81px);
+  padding: 40px;
+  background-image: url("Gemini_Generated_Image_14tkss14tkss14tk.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.text-content {
+  max-width: 700px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.text-content h1 {
+  font-size: 2.0em;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #bc6f04;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1em;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #bc6f04;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.map-container {
+  display: flex;
+  height: calc(100vh - 81px);
+  width: 100%;
+}
+
+.sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  background-color: #f8f9fa;
+  padding: 20px;
+  overflow-y: auto;
+  border-right: 1px solid #eaeaea;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #00a735;
+}
+
+.sidebar h3 {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.filter-group {
+  margin-bottom: 25px;
+}
+
+.filter-group div {
+  margin-bottom: 8px;
+}
+
+#university-select, #type-filter-select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+#map {
+  flex-grow: 1;
+  height: 100%;
+  background-color: #e9e9e9;
+}
+
+#buffer-slider,
+#geojson-opacity-slider {
+    width: 100%;
+}
+
+
+#geojson-control-panel {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #ccc;
+}
+
+.control-panel-title {
+  font-size: 0.9em !important;
+  font-weight: normal;
+  color: #555 !important;
+  margin-top: 5px;
+  margin-bottom: 3px !important;
+}
+
+#geojson-opacity-value {
+  font-size: 0.9em;
+  color: #555;
+}
+
+#geojson-color-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 12px;
+  border-radius: 5px;
+  background: linear-gradient(to right, 
+    hsl(0, 100%, 50%), 
+    hsl(60, 100%, 50%), 
+    hsl(120, 100%, 50%), 
+    hsl(180, 100%, 50%), 
+    hsl(240, 100%, 50%), 
+    hsl(300, 100%, 50%), 
+    hsl(360, 100%, 50%)
+  );
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  cursor: pointer;
+}
+
+#geojson-color-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  margin-top: -4px;
+}
+
+#geojson-color-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+
+
+.sidebar-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.sidebar-button:hover {
+    background-color: #00b31b;
+}
+
+#university-info img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#university-info p {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+#info-details p:last-child {
+    text-align: justify;
+    max-height: 150px; 
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+
+#university-info a {
+    color: #0056b3;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+#university-info a:hover {
+    text-decoration: underline;
+}
+
+/* --- ABOUT PAGE STYLES --- */
+#about-content { color: white; }
+.about-section { padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background-size: cover; background-position: center; position: relative; z-index: 1; }
+.about-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.6); z-index: -1; }
+
+.about-intro { 
+  min-height: 67vh;
+  background-image: url('https://four.upnyk.ac.id/public/assets/berita/gedung_upn_1_R.jpg'); 
+}
+
+.about-team { 
+  min-height: 33vh;
+  background-image: url('https://st2.depositphotos.com/1735158/11761/i/950/depositphotos_117614190-stock-photo-gray-stone-texture-background.jpg'); 
+}
+
+.about-intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text { max-width: 800px; font-size: 1.2em; line-height: 1.6; }
+
+.vision-mission-container { display: flex; justify-content: space-around; align-items: flex-start; width: 100%; max-width: 1200px; gap: 80px; }
+.vision, .mission { flex: 1; max-width: 400px; }
+.vision { 
+  text-align: left;
+ }
+.mission { 
+  text-align: left;
+  align-self: flex-start;
+}
+.vision h3, .mission h3 { font-size: 1.8em; margin-bottom: 15px; color: #007bff; }
+
+.team-info {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+  width: 100%;
+}
+.team-info h2 { 
+  font-size: 2em; 
+  margin-bottom: 30px; 
+  width: 100%; 
+}
+.team-info p { 
+  font-size: 1.1em; 
+  line-height: 1.5; 
+  flex-basis: 30%; 
+  min-width: 250px; 
+  margin-bottom: 15px;
+}
+.team-info p:nth-of-type(1) { order: 2; }
+.team-info p:nth-of-type(2) { order: 3; }
+.team-info p:nth-of-type(3) { order: 1; }
+
+/* KODE FOOTER YANG DIPERKECIL */
+.about-footer { 
+    background-color: #222; 
+    color: #f0f0f0; 
+    padding: 20px 40px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: stretch; 
+    text-align: center; 
+}
+
+.about-footer a { 
+    color: #00aaff; 
+    text-decoration: none; 
+    font-size: 1.2em;
+    font-weight: bold; 
+    margin-bottom: 20px; 
+}
+
+.about-footer a:hover { 
+    text-decoration: underline; 
+}
+
+.footer-main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.footer-logos {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.footer-logo-img {
+    height: 70px;
+    width: 70px;
+    object-fit: contain;
+}
+
+.contact-details { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 10px; 
+    margin-top: 0;
+    flex-grow: 1;
+    min-width: 300px;
+}
+
+.contact-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    text-align: left; 
+}
+
+.contact-icon { 
+    height: 20px; 
+    width: 20px; 
+    filter: invert(0.5); 
+    flex-shrink: 0;
+}
+
+.copyright-section { 
+    width: 100%; 
+    margin-top: 30px; 
+}
+
+.footer-line { 
+    border: none; 
+    height: 1px; 
+    background-color: #555; 
+}
+
+.copyright-text { 
+    margin-top: 10px; 
+    font-size: 0.9em; 
+    color: #aaa; 
+}
+
+/* === GAYA BARU UNTUK INFO KAMPUS DENGAN IKON (FINAL) === */
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px !important;
+}
+
+.info-icon {
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: 10px;
+    margin-top: 1px;
+    flex-shrink: 0;
+}
+
+#info-photo {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}

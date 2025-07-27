@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jelajah UMKM</title>
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="Gemini_Generated_Image_3eqo2q3eqo2q3eqo.png" alt="Jelaja UMKM Logo" class="logo-img">
+      Jelajah<span>UMKM</span>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li id="nav-home" class="nav-item active"><a>Home</a></li>
+        <li id="nav-maps" class="nav-item"><a>Maps</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home-content">
+    <section class="hero">
+      <div class="text-content">
+        <img src="logo_upn.png" height="100" alt="logo">
+        <h1>Temukan Lokasi dan Informasi UMKM di Desa Tangkil, Kec. Kemalang, Kab. Klaten</h1>
+        <p>Dukung produk lokal dan jelajahi potensi ekonomi desa melalui platform in!</p>
+        <p>KKN AD 83 UPN "VETERAN" YOGYAKARTA</p>
+        <button class="cta-button">LIHAT PETA</button>
+      </div>
+    </section>
+  </main>
+  
+  <main id="map-content" class="hidden">
+    <div class="map-container">
+      <aside class="sidebar">
+        <h2>Filter Peta</h2>
+        <div class="filter-group">
+          <h3>Kategori UMKM</h3>
+          <select id="type-filter-select" class="custom-select">
+            <option value="all">Semua Tipe</option>
+            <option value="Kuliner">Kuliner</option>
+            <option value="Toko Sembako & Toko Kelontong">Toko Sembako & Toko Kelontong</option>
+            <option value="Otomotif">Otomotif</option>
+            <option value="Jasa Kecantikan & Perawatan">Jasa Kecantikan & Perawatan</option>
+            <option value="Pertanian & Peternakan">Pertanian & Peternakan</option>
+            <option value="Alat Tulis">Alat Tulis</option>
+            <option value="Jasa Digital & Komputer">Jasa Digital & Komputer</option>
+            <option value="Laundry">Laundry</option>
+            <option value="Kesehatan">Kesehatan</option>
+            <option value="Elektronik & Peralatan Rumah">Elektronik & Peralatan Rumah</option>
+            <option value="Bahan Makanan">Bahan Makanan</option>
+            <option value="Bangunan & Material">Bangunan & Material</option>
+            <option value="Pakaian">Pakaian</option>
+            <option value="Jasa Pengolahan Makanan">Jasa Pengolahan Makanan</option>
+            <option value="Tembakau">Tembakau</option>
+            <option value="Kerajinan">Kerajinan</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <h3>Pilih Kategori UMKM</h3>
+          <select id="UMKM-select" class="custom-select">
+            <option value="">--Pilih dari Peta--</option>
+          </select>
+        </div>
+        
+        <div id="UMKM-info" class="filter-group hidden">
+            <h3 id="info-title">Informasi UMKM</h3>
+            <img id="info-photo" src="" alt="Foto UMKM">
+            <div id="info-details">
+                <p class="info-item">
+                    <img src="https://img.icons8.com/ios-filled/50/005aa7/marker.png" alt="Alamat" class="info-icon">
+                    <span id="info-address"></span>
+                </p>
+                <p class="info-item">
+                    <img src="https://img.icons8.com/ios-filled/50/005aa7/phone.png" alt="Telepon" class="info-icon">
+                    <span id="info-telp"></span>  
+                </p>
+                <p><strong>Deskripsi:</strong> <span id="info-deskripsi"></span></p>
+                </div>
+        </div>
+      </aside>
+      <div id="map"></div>
+
+      <div id="geojson-control-panel" class="hidden">
+          <h3 class="control-panel-title">Opasitas</h3>
+          <input type="range" id="geojson-opacity-slider" min="0" max="1" step="0.1" value="0.5">
+          <span id="geojson-opacity-value">0.5</span>
+          
+          <h3 class="control-panel-title">Warna</h3>
+          <input type="range" id="geojson-color-slider" min="0" max="360" value="30">
+      </div>
+    </div>
+    </main>
+
+    <main id="about-content" class="hidden">
+
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+     
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.min.js"></script>
+     
+  <script src="script.js"></script>
+</body>
+</html>
