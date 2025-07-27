@@ -176,7 +176,6 @@ header {
     width: 100%;
 }
 
-
 #geojson-control-panel {
   margin-top: 8px;
   padding-top: 8px;
@@ -238,7 +237,6 @@ header {
   cursor: pointer;
 }
 
-
 .sidebar-button {
     width: 100%;
     padding: 10px;
@@ -276,7 +274,6 @@ header {
     padding-right: 8px;
 }
 
-
 #university-info a {
     color: #0056b3;
     text-decoration: none;
@@ -289,8 +286,28 @@ header {
 
 /* --- ABOUT PAGE STYLES --- */
 #about-content { color: white; }
-.about-section { padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background-size: cover; background-position: center; position: relative; z-index: 1; }
-.about-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.6); z-index: -1; }
+.about-section { 
+  padding: 40px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+  background-size: cover; 
+  background-position: center; 
+  position: relative; 
+  z-index: 1; 
+}
+.about-section::before { 
+  content: ''; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  background-color: rgba(0, 0, 0, 0.6); 
+  z-index: -1; 
+}
 
 .about-intro { 
   min-height: 67vh;
@@ -309,10 +326,24 @@ header {
     gap: 40px;
 }
 
-.about-text { max-width: 800px; font-size: 1.2em; line-height: 1.6; }
+.about-text { 
+  max-width: 800px; 
+  font-size: 1.2em; 
+  line-height: 1.6; 
+}
 
-.vision-mission-container { display: flex; justify-content: space-around; align-items: flex-start; width: 100%; max-width: 1200px; gap: 80px; }
-.vision, .mission { flex: 1; max-width: 400px; }
+.vision-mission-container { 
+  display: flex; 
+  justify-content: space-around; 
+  align-items: flex-start; 
+  width: 100%; 
+  max-width: 1200px; 
+  gap: 80px; 
+}
+.vision, .mission { 
+  flex: 1; 
+  max-width: 400px; 
+}
 .vision { 
   text-align: left;
  }
@@ -320,7 +351,11 @@ header {
   text-align: left;
   align-self: flex-start;
 }
-.vision h3, .mission h3 { font-size: 1.8em; margin-bottom: 15px; color: #007bff; }
+.vision h3, .mission h3 { 
+  font-size: 1.8em; 
+  margin-bottom: 15px; 
+  color: #007bff; 
+}
 
 .team-info {
   display: flex;
@@ -453,4 +488,415 @@ header {
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+
+/* ========================================= */
+/* RESPONSIVE MEDIA QUERIES */
+/* ========================================= */
+
+/* Mobile Landscape & Small Tablets (768px dan ke bawah) */
+@media screen and (max-width: 768px) {
+  /* Header */
+  header {
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .logo {
+    font-size: 1.3em;
+  }
+  
+  .logo-img {
+    height: 35px;
+    width: 35px;
+    margin-right: 8px;
+  }
+  
+  .nav-links {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .nav-item {
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+  
+  /* Hero Section */
+  .hero {
+    padding: 30px 20px;
+    min-height: calc(100vh - 100px);
+  }
+  
+  .text-content {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  
+  .text-content h1 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+  }
+  
+  .text-content p {
+    font-size: 1em;
+    margin-bottom: 25px;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+  
+  /* Map Container */
+  .map-container {
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - 100px);
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+    padding: 15px;
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+    order: 2;
+  }
+  
+  .sidebar h2 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+  }
+  
+  .sidebar h3 {
+    font-size: 1em;
+  }
+  
+  .filter-group {
+    margin-bottom: 15px;
+  }
+  
+  #map {
+    height: 60vh;
+    min-height: 400px;
+    order: 1;
+  }
+  
+  /* About Sections */
+  .about-section {
+    padding: 30px 20px;
+  }
+  
+  .about-intro {
+    min-height: 60vh;
+  }
+  
+  .about-team {
+    min-height: 40vh;
+  }
+  
+  .about-intro-container {
+    gap: 30px;
+  }
+  
+  .about-text {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  
+  .vision-mission-container {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .vision, .mission {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .vision h3, .mission h3 {
+    font-size: 1.5em;
+  }
+  
+  .team-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .team-info h2 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+  }
+  
+  .team-info p {
+    flex-basis: 100%;
+    min-width: auto;
+    text-align: center;
+    font-size: 1em;
+  }
+  
+  .team-info p:nth-of-type(1) { order: 1; }
+  .team-info p:nth-of-type(2) { order: 2; }
+  .team-info p:nth-of-type(3) { order: 3; }
+  
+  /* Footer */
+  .about-footer {
+    padding: 20px;
+  }
+  
+  .about-footer a {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+  }
+  
+  .footer-main-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .footer-logos {
+    gap: 15px;
+  }
+  
+  .footer-logo-img {
+    height: 60px;
+    width: 60px;
+  }
+  
+  .contact-details {
+    align-items: center;
+    text-align: center;
+    min-width: auto;
+  }
+  
+  .contact-item {
+    justify-content: center;
+  }
+  
+  .copyright-section {
+    margin-top: 20px;
+  }
+  
+  /* University Info */
+  #university-info p {
+    font-size: 0.85em;
+  }
+  
+  #info-details p:last-child {
+    max-height: 120px;
+  }
+  
+  #info-photo {
+    max-height: 150px;
+  }
+}
+
+/* Mobile Portrait (480px dan ke bawah) */
+@media screen and (max-width: 480px) {
+  /* Header */
+  header {
+    padding: 12px 15px;
+  }
+  
+  .logo {
+    font-size: 1.2em;
+  }
+  
+  .logo-img {
+    height: 30px;
+    width: 30px;
+    margin-right: 6px;
+  }
+  
+  .nav-links {
+    gap: 8px;
+  }
+  
+  .nav-item {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+  
+  /* Hero */
+  .hero {
+    padding: 20px 15px;
+  }
+  
+  .text-content h1 {
+    font-size: 1.4em;
+    margin-bottom: 12px;
+  }
+  
+  .text-content p {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    padding: 8px 18px;
+    font-size: 0.85em;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    padding: 12px;
+    max-height: 35vh;
+  }
+  
+  .sidebar h2 {
+    font-size: 1.2em;
+    margin-bottom: 12px;
+  }
+  
+  .sidebar h3 {
+    font-size: 0.95em;
+    margin-bottom: 8px;
+  }
+  
+  .filter-group {
+    margin-bottom: 12px;
+  }
+  
+  #university-select, #type-filter-select {
+    padding: 6px;
+    font-size: 0.9em;
+  }
+  
+  .sidebar-button {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+  
+  /* Map */
+  #map {
+    height: 65vh;
+    min-height: 350px;
+  }
+  
+  /* About sections */
+  .about-section {
+    padding: 25px 15px;
+  }
+  
+  .about-text {
+    font-size: 0.95em;
+  }
+  
+  .vision h3, .mission h3 {
+    font-size: 1.3em;
+    margin-bottom: 12px;
+  }
+  
+  .team-info h2 {
+    font-size: 1.4em;
+  }
+  
+  .team-info p {
+    font-size: 0.95em;
+  }
+  
+  /* Footer */
+  .about-footer {
+    padding: 15px;
+  }
+  
+  .about-footer a {
+    font-size: 1em;
+  }
+  
+  .footer-logo-img {
+    height: 50px;
+    width: 50px;
+  }
+  
+  .contact-icon {
+    height: 18px;
+    width: 18px;
+  }
+  
+  .copyright-text {
+    font-size: 0.8em;
+  }
+  
+  /* University info */
+  #university-info p {
+    font-size: 0.8em;
+  }
+  
+  #info-details p:last-child {
+    max-height: 100px;
+  }
+  
+  #info-photo {
+    max-height: 120px;
+  }
+  
+  .info-icon {
+    width: 14px !important;
+    height: 14px !important;
+    margin-right: 8px;
+  }
+}
+
+/* Large Tablets & Small Desktops (992px dan ke bawah) */
+@media screen and (max-width: 992px) and (min-width: 769px) {
+  .sidebar {
+    width: 280px;
+    padding: 18px;
+  }
+  
+  .hero {
+    padding: 35px;
+  }
+  
+  .text-content h1 {
+    font-size: 1.8em;
+  }
+  
+  .about-section {
+    padding: 35px;
+  }
+  
+  .vision-mission-container {
+    gap: 60px;
+  }
+  
+  .vision h3, .mission h3 {
+    font-size: 1.6em;
+  }
+}
+
+/* Extra Small Devices (320px dan ke bawah) */
+@media screen and (max-width: 320px) {
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+  }
+  
+  .nav-item {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .text-content h1 {
+    font-size: 1.2em;
+  }
+  
+  .text-content p {
+    font-size: 0.85em;
+  }
+  
+  .sidebar {
+    max-height: 30vh;
+  }
+  
+  #map {
+    height: 70vh;
+  }
 }
